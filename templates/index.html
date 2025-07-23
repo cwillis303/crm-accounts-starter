@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CRM – Accounts</title>
+</head>
+<body>
+  <h1>All Accounts</h1>
+  {% if accounts %}
+    <ul>
+      {% for acct in accounts %}
+        <li>
+          <strong>{{ acct['name'] }}</strong>
+          ({{ acct['market_segment'] or 'N/A' }}) – {{ acct['address'] or 'No address' }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No accounts yet—add one below!</p>
+  {% endif %}
+</body>
+</html>
